@@ -9,9 +9,7 @@
 
 # 安装方法 （ 2017/12/21 更新）
 ```
-git clone https://github.com/shigalin/SSR-manyuser_glzjin_shell.git SSR
-
-cd SSR
+git clone https://github.com/shigalin/SSR-manyuser_glzjin_shell.git SSR && cd SSR
 ```
 旧版本安装：
 ```
