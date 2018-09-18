@@ -104,12 +104,13 @@ development_tools_installation(){
 }
 libsodium_installation(){
 	mkdir -p ${libsodium_folder} && cd ${libsodium_folder}
-	wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
-	if [[ ! -f ${libsodium_folder}/libsodium-1.0.16.tar.gz ]]; then
+        Libsodiumr_ver=$(wget -qO- "https://github.com/jedisct1/libsodium/tags"|grep "/jedisct1/libsodium/releases/tag/"|head -1|sed -r 's/.*tag\/(.+)\">.*/\1/')
+	wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/releases/download/${Libsodiumr_ver}/libsodium-${Libsodiumr_ver}.tar.gz"
+	if [[ ! -f ${libsodium_folder}/libsodium-${Libsodiumr_ver}.tar.gz ]]; then
 		echo -e "${Error} ${RedBG} libsodium download FAIL ${Font}"
 		exit 1
 	fi
-	tar xf libsodium-1.0.16.tar.gz && cd libsodium-1.0.16
+	tar xf libsodium-${Libsodiumr_ver}.tar.gz && cd libsodium-${Libsodiumr_ver}
 	./configure && make -j2 && make install
 	if [[ $? -ne 0 ]]; then 
 		echo -e "${Error} ${RedBG} libsodium install FAIL ${Font}"
@@ -319,7 +320,7 @@ SSR_installation(){
 	development_tools_installation
 	libsodium_installation
 	
-	cd ${shadowsocks_install_folder} && git clone -b manyuser https://github.com/glzjin/shadowsocks.git 
+	cd ${shadowsocks_install_folder} && git clone -b manyuser https://github.com/SakuraSa233/shadowsocks.git 
 	cd shadowsocks && cp apiconfig.py userapiconfig.py && cp config.json user-config.json
 	
 	SSR_dependency_installation
