@@ -7,7 +7,7 @@
 * 请注意：4.0版本未经过严格的测试，若出现问题请及时提交 issue ，本人将会对相关内容进行排查，感谢理解
 * 由于零散更新，内容上出现部分代码冗余，会在未来进行部分代码重构
 
-# 安装方法 （ 2017/12/21 更新）
+# 安装方法 （ 2018/09/18 更新）
 ```
 git clone https://github.com/shigalin/SSR-manyuser_glzjin_shell.git SSR && cd SSR && chmod +x *
 ```
@@ -50,6 +50,10 @@ supervisor 默认配置目录 ：`/etc/supervisor/conf.d/shadowsocks.conf （Cen
 携带 ss.log 文件提交 issue
 
 # 更新
+## 2018-09-18
+* libsodium自动选择最新版本
+* 后端版本更换为SakuraSa233/shadowsocks
+
 ## 2017-12-21
 V4.0
 * 添加 基本init选项，可以直接通过脚本控制后端启动，暂停等基本功能
