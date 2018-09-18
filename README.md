@@ -9,7 +9,9 @@
 
 # 安装方法 （ 2018/09/18 更新）
 ```
-git clone https://github.com/shigalin/SSR-manyuser_glzjin_shell.git SSR && cd SSR && chmod +x *
+Ubuntu/Debian：apt-get update -y && apt-get install git -y && git clone https://github.com/shigalin/SSR-manyuser_glzjin_shell.git SSR && cd SSR && chmod +x *
+
+Centos：yum update -y && yum install git -y && git clone https://github.com/shigalin/SSR-manyuser_glzjin_shell.git SSR && cd SSR && chmod +x *
 ```
 旧版本安装：
 ```
