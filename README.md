@@ -6,7 +6,7 @@
 * 默认安装目录：/root/shadowsocks
 * 请注意：4.0版本未经过严格的测试，若出现问题请及时提交 issue ，本人将会对相关内容进行排查，感谢理解
 * 由于零散更新，内容上出现部分代码冗余，会在未来进行部分代码重构
-* Centos上supervisor配置有问题
+* Centos上supervisor配置有问题，暂时建议使用Ubuntu/Debian
 
 # 安装方法 （ 2018/09/18 更新）
 ```
