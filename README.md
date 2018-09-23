@@ -57,7 +57,7 @@ supervisor 默认配置目录 ：`/etc/supervisor/conf.d/shadowsocks.conf （Cen
 # 更新
 ## 2018-09-18
 * libsodium自动选择最新版本
-* 后端版本更换为SakuraSa233/shadowsocks
+* 后端版本更换为NimaQu/shadowsocks
 
 ## 2017-12-21
 V4.0
