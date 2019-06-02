@@ -106,7 +106,7 @@ libsodium_installation(){
 	mkdir -p ${libsodium_folder} && cd ${libsodium_folder}
         Libsodiumr_ver=$(wget -qO- "https://github.com/jedisct1/libsodium/tags"|grep "/jedisct1/libsodium/releases/tag/"|head -1|sed -r 's/.*tag\/(.+)\">.*/\1/')
 	wget  --no-check-certificate -N "https://github.com/jedisct1/libsodium/archive/${Libsodiumr_ver}-RELEASE.tar.gz"
-	if [[ ! -f libsodium-${Libsodiumr_ver}-RELEASE.tar.gz ]]; then
+	if [[ ! -f ${Libsodiumr_ver}-RELEASE.tar.gz ]]; then
 		echo -e "${Error} ${RedBG} libsodium download FAIL ${Font}"
 		exit 1
 	fi
