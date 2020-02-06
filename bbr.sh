@@ -311,15 +311,15 @@ install_bbr() {
                 rpm_kernel_url_1="http://repos.lax.quadranet.com/elrepo/archive/kernel/el6/i386/RPMS/"
             fi
             rpm_kernel_url_2="https://dl.lamp.sh/files/"
-            wget -c -t3 -T60 -O ${rpm_kernel_name} ${rpm_kernel_url_1}${rpm_kernel_name}
+            wget --no-check-certificate -c -t3 -T60 -O ${rpm_kernel_name} ${rpm_kernel_url_1}${rpm_kernel_name}
             if [ $? -ne 0 ]; then
                 rm -rf ${rpm_kernel_name}
-                wget -c -t3 -T60 -O ${rpm_kernel_name} ${rpm_kernel_url_2}${rpm_kernel_name}
+                wget --no-check-certificate -c -t3 -T60 -O ${rpm_kernel_name} ${rpm_kernel_url_2}${rpm_kernel_name}
             fi
-            wget -c -t3 -T60 -O ${rpm_kernel_devel_name} ${rpm_kernel_url_1}${rpm_kernel_devel_name}
+            wget --no-check-certificate -c -t3 -T60 -O ${rpm_kernel_devel_name} ${rpm_kernel_url_1}${rpm_kernel_devel_name}
             if [ $? -ne 0 ]; then
                 rm -rf ${rpm_kernel_devel_name}
-                wget -c -t3 -T60 -O ${rpm_kernel_devel_name} ${rpm_kernel_url_2}${rpm_kernel_devel_name}
+                wget --no-check-certificate -c -t3 -T60 -O ${rpm_kernel_devel_name} ${rpm_kernel_url_2}${rpm_kernel_devel_name}
             fi
             if [ -f "${rpm_kernel_name}" ]; then
                 rpm -ivh ${rpm_kernel_name}
@@ -346,13 +346,13 @@ install_bbr() {
         echo -e "${green}Info:${plain} Getting latest kernel version..."
         get_latest_version
         if [ -n ${modules_deb_name} ]; then
-            wget -c -t3 -T60 -O ${deb_kernel_modules_name} ${deb_kernel_modules_url}
+            wget --no-check-certificate -c -t3 -T60 -O ${deb_kernel_modules_name} ${deb_kernel_modules_url}
             if [ $? -ne 0 ]; then
                 echo -e "${red}Error:${plain} Download ${deb_kernel_modules_name} failed, please check it."
                 exit 1
             fi
         fi
-        wget -c -t3 -T60 -O ${deb_kernel_name} ${deb_kernel_url}
+        wget --no-check-certificate -c -t3 -T60 -O ${deb_kernel_name} ${deb_kernel_url}
         if [ $? -ne 0 ]; then
             echo -e "${red}Error:${plain} Download ${deb_kernel_name} failed, please check it."
             exit 1
